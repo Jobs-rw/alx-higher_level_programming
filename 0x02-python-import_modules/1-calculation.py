@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 # Importing specific functions from the calculator_1 module
-from calculator_1 import add, subtract, multiply, divide
+if __name__ == "__main__":
+    from calculator_1 import add, subtract, multiply, divide
 
 # Define variables a and b
 a = 10
@@ -13,7 +14,7 @@ prod_result = multiply(a, b)
 quot_result = divide(a, b)
 
 # Print the results
-print("Sum:", sum_result)
-print("Difference:", diff_result)
-print("Product:", prod_result)
-print("Quotient:", quot_result)
+print('{} + {} = {}'.format(a, b, sum_result))
+print('{} - {} = {}'.format(a, b, diff_result))
+print('{} * {} = {}'.format(a, b, prod_result))
+print('{} + {} = {}'.format(a, b, quot_result))
