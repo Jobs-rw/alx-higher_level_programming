@@ -3,6 +3,14 @@
 
 
 class Rectangle:
+    """At this stage the class only creates private instance attributes by
+    taking in two arguments.
+
+    Args:
+        width (int): horizontal dimension of rectangle, defaults to 0
+        height (int): vertical dimension of rectangle, defaults to 0
+
+    """
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
