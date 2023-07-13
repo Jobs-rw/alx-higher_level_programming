@@ -1,11 +1,13 @@
+#!/usr/bin/python3
+"""
+JSON representation of an object (string)
+"""
 import json
 
-def save_to_json_file(my_obj, filename):
+
+def load_from_json_file(filename):
     """
-    Writes an object to a text file using JSON representation
-    Args:
-        my_obj (object): The object to be serialized and saved to the file
-        filename (str): The name of the file
+    Load JSON  object
     """
-    with open(filename, 'w') as file:
-        json.dump(my_obj, file)
+    with open(filename, encoding="utf-8") as f:
+        return json.load(f)
