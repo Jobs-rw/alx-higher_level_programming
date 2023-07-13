@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" write module """
 
 
 def read_lines(filename="", nb_lines=0):
