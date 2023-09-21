@@ -18,12 +18,12 @@ if __name__ == '__main__':
                 WHERE states.name = %s", [argv[4]])
 
     row = cur.fetchone()
-    i = []
+    j = []
     while row is not None:
-        i.append(row[1])
+        j.append(row[1])
         row = cur.fetchone()
 
-    print(", ".join(i))
+    print(", ".join(j))
 
     # Clean up process
     cur.close()
