@@ -11,13 +11,14 @@ if __name__ == '__main__':
                          passwd=argv[2], db=argv[3])
 
     # It gives us the ability to have multiple seperate working environments
-    # through the same connection to the database.
     cur = db.cursor()
     cur.execute("SELECT * FROM states")
 
     rows = cur.fetchall()
-    for i in rows:
-        print(i)
+    while row is not None:
+        print(row)
+        row = cur.fetchone()
+
     # Clean up process
     cur.close()
     db.close()
