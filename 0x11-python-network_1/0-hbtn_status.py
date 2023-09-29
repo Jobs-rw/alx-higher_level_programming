@@ -11,6 +11,4 @@ try:
         print("\t- type :", type(html))
         print("\t- content :", html.decode('utf-8'))
 except urllib.error.HTTPError as e:
-    print(f"Error: {e.code} {e.reason}")
-except urllib.error.URLError as e:
-    print(f"Error: {e.reason}")
+    print("Error: {} {}".format(e.code, e.reason))
