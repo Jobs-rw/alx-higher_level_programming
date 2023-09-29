@@ -1,23 +1,19 @@
 #!/usr/bin/python3
 """
-list 10 commits (from the most recent to oldest) of the repository
+list 10 commits (from the most recent to oldest) of the repository 
 """
-import requests
-from sys import argv
 
 
-if __name__ == "__main__":
-    """
-    list 10 commits (from the most recent to oldest) of the repository
-    """
+if __name__ == '__main__':
+    import requests
+    from sys import argv
+
+    name = argv[2]
     repo = argv[1]
-    owner = argv[2]
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(owner, repo)
-    r = requests.get(url)
-    res_list = r.json()
-    try:
-        for i in range(10):
-            print("{}: {}".format(res_list[i].get('sha'), res_list[i].
-                                  get('commit').get('author').get('name')))
-    except:
-        pass
+    params = {'per_page': 10}
+    r = requests.get('https://api.github.com/repos/{}/{}/commits'
+                     .format(name, repo), params=params)
+    r = r.json()
+    for arg in r:
+        print("{}: {}".format(arg.get('sha'),
+                              arg.get('commit').get('author').get('name')))
